@@ -8,6 +8,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsComponent } from './products/products.component';
 import { UserComponent } from './user/user.component'
+import {UserRoutingModule} from "./user/user-routing.module";
+import { RoleComponent } from './role/role.component';
+import {RoleRoutingModule} from "./role/role-routing.module";
 
 @NgModule({
   declarations: [
@@ -15,14 +18,17 @@ import { UserComponent } from './user/user.component'
     LoginComponent,
     DashboardComponent,
     ProductsComponent,
-    UserComponent
+    UserComponent,
+    RoleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    UserRoutingModule,
+    RoleRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,19 +7,14 @@
     <thead id="theadTableRoles">
     <tr>
       <th class="h5" id="theadRoleName">Nombre</th>
-      <th class="h5" id="theadRoleCategory">Email</th>
     </tr>
     </thead>
     <tbody>
-    <tr class="trbody" *ngFor="let user of users">
+    <tr class="trbody" *ngFor="let role of roles">
       <td>
-        <dd class="id">{{user.name}}</dd>
-      </td>
-      <td>
-        <dd class="brand">{{user.email}}</dd>
+        <dd class="brand">{{role.name}}</dd>
       </td>
     </tr>
     </tbody>
   </table>
 </div>
-
