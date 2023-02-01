@@ -17,7 +17,11 @@ import {LoginRoutingModule} from "./login/login-routing.module";
 import {DashboardRoutingModule} from "./dashboard/dashboard-routing.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
+
+// Material
 import {MatInputModule} from "@angular/material/input";
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,10 @@ import {MatInputModule} from "@angular/material/input";
     DashboardRoutingModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
+
+
     MatInputModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
