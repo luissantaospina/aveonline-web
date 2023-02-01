@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ClientService } from "../client/client.service";
-import { Client } from "../client/client";
+import {ClientService} from "./client.service";
+import {Client} from "./client";
 
 @Component({
   selector: 'app-client',
@@ -8,7 +8,6 @@ import { Client } from "../client/client";
   styleUrls: ['./client.component.css']
 })
 export class ClientComponent implements OnInit {
-
   constructor(private userService: ClientService) { }
 
   clients: Array<Client> = []

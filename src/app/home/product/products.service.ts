@@ -1,19 +1,17 @@
 import { Injectable } from '@angular/core';
-import {environment} from "../../environments/environment";
+import {environment} from "../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import { Role } from "./role";
+import { Product } from "./Product";
 
 @Injectable({
   providedIn: 'root'
 })
-export class RoleService {
-
+export class ProductsService {
   private apiUrl: string = environment.baseUrl
-
   constructor(private http: HttpClient) { }
 
-  getRoles(): Observable<Role[]> {
-    return this.http.get<Role[]>(this.apiUrl + 'roles')
+  getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.apiUrl + 'products')
   }
 }
