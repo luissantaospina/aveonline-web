@@ -1,0 +1,25 @@
+<div class="col-8">
+  <table
+    class="table"
+    aria-describedby="tableProducts"
+    id="tableProducts"
+  >
+    <thead id="theadTableProducts">
+    <tr>
+      <th class="h5" id="theadProductName">Nombre</th>
+      <th class="h5" id="theadProductCategory">Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="trbody" *ngFor="let user of users">
+      <td>
+        <dd class="id">{{user.name}}</dd>
+      </td>
+      <td>
+        <dd class="brand">{{user.email}}</dd>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

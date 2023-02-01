@@ -1,1 +1,32 @@
-<p>products works!</p>
+<div class="col-8">
+  <table
+    class="table"
+    aria-describedby="tableProducts"
+    id="tableProducts"
+  >
+    <thead id="theadTableProducts">
+    <tr>
+      <th class="h5" id="theadProductCode">Codigó</th>
+      <th class="h5" id="theadProductName">Nombre</th>
+      <th class="h5" id="theadProductCategory">Categoria</th>
+      <th class="h5" id="theadProductPrice">Precio</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="trbody" *ngFor="let product of products">
+      <td>
+        <dd class="id">{{product.code}}</dd>
+      </td>
+      <td>
+        <dd class="brand">{{product.name}}</dd>
+      </td>
+      <td>
+        <dd class="line">{{product.category}}</dd>
+      </td>
+      <td>
+        <dd class="model">{{product.price}}</dd>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
