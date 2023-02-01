@@ -1,1 +1,16 @@
-<p>login works!</p>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
+      <input type="text" id="login" class="fadeIn second" formControlName="email" placeholder="email">
+      <input type="password" id="password" class="fadeIn third" formControlName="password" placeholder="contraseña">
+      <input type="submit" class="fadeIn fourth" value="Iniciar sesion" [disabled]="!loginForm.valid">
+    </form>
+
+    <div class="alert alert-danger" *ngIf="errorStatus">
+      <p>El email y/o contraseña es incorrecto</p>
+    </div>
+
+  </div>
+</div>
+
