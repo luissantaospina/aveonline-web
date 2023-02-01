@@ -15,6 +15,9 @@ import { ClientComponent } from './client/client.component';
 import {ClientRoutingModule} from "./client/client-routing.module";
 import {LoginRoutingModule} from "./login/login-routing.module";
 import {DashboardRoutingModule} from "./dashboard/dashboard-routing.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import {DashboardRoutingModule} from "./dashboard/dashboard-routing.module";
     RoleRoutingModule,
     ClientRoutingModule,
     LoginRoutingModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

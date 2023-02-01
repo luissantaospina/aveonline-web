@@ -67,7 +67,7 @@ h2.active {
 }
 
 input[type=button], input[type=submit], input[type=reset]  {
-  background-color: #56baed;
+  background-color: #9b1f3a;
   border: none;
   color: white;
   padding: 15px 80px;
@@ -181,4 +181,8 @@ input[type=password]:focus {
 
 #icon {
   width:60%;
+}
+
+.aveonline{
+  max-width: 220px;
 }
