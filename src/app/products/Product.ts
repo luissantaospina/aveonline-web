@@ -1,31 +1,31 @@
 export class Product {
   id: number;
-  is_active: boolean;
-  amount: number;
-  category: string;
-  code: string;
-  description: string;
-  name: string;
-  price: number;
+  esta_activo: boolean;
+  cantidad: number;
+  categoria: string;
+  codigo: string;
+  descripcion: string;
+  nombre: string;
+  precio: number;
 
   constructor(
     id: number,
-    is_active: boolean,
-    amount: number,
-    category: string,
-    code: string,
-    description: string,
-    name: string,
-    price: number
+    esta_activo: boolean,
+    cantidad: number,
+    categoria: string,
+    codigo: string,
+    descripcion: string,
+    nombre: string,
+    precio: number
   )
   {
     this.id = id;
-    this.is_active = is_active;
-    this.amount = amount;
-    this.category = category;
-    this.code = code;
-    this.description = description;
-    this.name = name;
-    this.price = price;
+    this.esta_activo = esta_activo;
+    this.cantidad = cantidad;
+    this.categoria = categoria;
+    this.codigo = codigo;
+    this.descripcion = descripcion;
+    this.nombre = nombre;
+    this.precio = precio;
   }
 }

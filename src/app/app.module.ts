@@ -11,6 +11,8 @@ import { UserComponent } from './user/user.component'
 import {UserRoutingModule} from "./user/user-routing.module";
 import { RoleComponent } from './role/role.component';
 import {RoleRoutingModule} from "./role/role-routing.module";
+import { ClientComponent } from './client/client.component';
+import {ClientRoutingModule} from "./client/client-routing.module";
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import {RoleRoutingModule} from "./role/role-routing.module";
     DashboardComponent,
     ProductsComponent,
     UserComponent,
-    RoleComponent
+    RoleComponent,
+    ClientComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import {RoleRoutingModule} from "./role/role-routing.module";
     FormsModule,
     HttpClientModule,
     UserRoutingModule,
-    RoleRoutingModule
+    RoleRoutingModule,
+    ClientRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,7 +13,7 @@ export class UserComponent implements OnInit {
   users: Array<User> = []
 
   getUsersList(): void {
-    this.userService.getProducts().subscribe(users => {
+    this.userService.getUsers().subscribe(users => {
       this.users = users
     })
   }
