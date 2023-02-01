@@ -14,7 +14,7 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   login(form:LoginInterfase): Observable<ResponseInterfase> {
-    let direction = this.apiUrl + 'users'
+    let direction = this.apiUrl + 'users/login'
     return this.http.post<ResponseInterfase>(direction, form)
   }
 }

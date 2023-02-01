@@ -13,6 +13,8 @@ import { RoleComponent } from './role/role.component';
 import {RoleRoutingModule} from "./role/role-routing.module";
 import { ClientComponent } from './client/client.component';
 import {ClientRoutingModule} from "./client/client-routing.module";
+import {LoginRoutingModule} from "./login/login-routing.module";
+import {DashboardRoutingModule} from "./dashboard/dashboard-routing.module";
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import {ClientRoutingModule} from "./client/client-routing.module";
     HttpClientModule,
     UserRoutingModule,
     RoleRoutingModule,
-    ClientRoutingModule
+    ClientRoutingModule,
+    LoginRoutingModule,
+    DashboardRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
