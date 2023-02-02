@@ -1,6 +1,10 @@
 <div class="container">
     <mat-toolbar>
       <span>Productos</span>
+      <div class="flex"></div>
+      <button mat-fab color="primary" routerLink="/inicio/usuarios/crear">
+        <mat-icon>add</mat-icon>
+      </button>
     </mat-toolbar>
 
     <table mat-table [dataSource]="products" class="mat-elevation-z2">

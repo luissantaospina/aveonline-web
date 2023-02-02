@@ -1,6 +1,5 @@
 export class Product {
   id: number;
-  esta_activo: boolean;
   cantidad: number;
   categoria: string;
   codigo: string;
@@ -10,7 +9,6 @@ export class Product {
 
   constructor(
     id: number,
-    esta_activo: boolean,
     cantidad: number,
     categoria: string,
     codigo: string,
@@ -20,7 +18,6 @@ export class Product {
   )
   {
     this.id = id;
-    this.esta_activo = esta_activo;
     this.cantidad = cantidad;
     this.categoria = categoria;
     this.codigo = codigo;

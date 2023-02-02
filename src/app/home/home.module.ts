@@ -16,6 +16,8 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatTableModule} from '@angular/material/table';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { CreateProductComponent } from './product/create-product/create-product.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     ProductComponent,
     RoleComponent,
     UserComponent,
-    ClientComponent
+    ClientComponent,
+    CreateProductComponent
   ],
   imports: [
     CommonModule,
@@ -37,7 +40,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatSidenavModule,
     MatTableModule,
     MatTooltipModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ReactiveFormsModule
   ]
 })
 export class HomeModule { }

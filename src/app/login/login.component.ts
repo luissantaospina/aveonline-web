@@ -23,12 +23,12 @@ export class LoginComponent implements OnInit {
   errorStatus:boolean = false
 
   ngOnInit(): void {
-    // this.checkLocalStorage()
+    this.checkLocalStorage()
   }
 
   checkLocalStorage() {
     if (localStorage.getItem('token')) {
-      this.router.navigate(['home'])
+      this.router.navigate(['inicio'])
     }
   }
 
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     this.api.login(form).subscribe(data =>{
       if (data.status == "ok"){
         localStorage.setItem("token", data.token)
-        this.router.navigate(['home'])
+        this.router.navigate(['inicio'])
       } else {
         this.errorStatus = true
       }

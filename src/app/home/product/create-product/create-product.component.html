@@ -1,0 +1,18 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <form [formGroup]="createProductForm" (ngSubmit)="createProduct(createProductForm.value)">
+      <input
+        type="text" class="fadeIn second mt-3"
+        formControlName="nombre" placeholder="nombre"
+      >
+      <input
+        type="text" class="fadeIn third"
+        formControlName="descripcion" placeholder="descripcion"
+      >
+      <input
+        type="submit" class="fadeIn fourth mt-3"
+        value="Crear" [disabled]="createProductForm.invalid"
+      >
+    </form>
+  </div>
+</div>
