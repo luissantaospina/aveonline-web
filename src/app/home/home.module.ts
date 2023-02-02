@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -25,6 +24,7 @@ import { EditClientComponent } from './client/edit-client/edit-client.component'
 import { EditRoleComponent } from './role/edit-role/edit-role.component';
 import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { EditProductComponent } from './product/edit-product/edit-product.component';
+// import {DashboardGuard} from "../guards/dashboard.guard";
 
 
 @NgModule({
@@ -44,19 +44,22 @@ import { EditProductComponent } from './product/edit-product/edit-product.compon
     EditUserComponent,
     EditProductComponent
   ],
-    imports: [
-        CommonModule,
-        HomeRoutingModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatButtonModule,
-        MatListModule,
-        MatSidenavModule,
-        MatTableModule,
-        MatTooltipModule,
-        MatSnackBarModule,
-        ReactiveFormsModule,
-        FormsModule
-    ]
+  imports: [
+      CommonModule,
+      HomeRoutingModule,
+      MatToolbarModule,
+      MatIconModule,
+      MatButtonModule,
+      MatListModule,
+      MatSidenavModule,
+      MatTableModule,
+      MatTooltipModule,
+      MatSnackBarModule,
+      ReactiveFormsModule,
+      FormsModule
+  ],
+  providers: [
+    // DashboardGuard
+  ]
 })
 export class HomeModule { }

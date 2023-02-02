@@ -13,9 +13,13 @@ import {EditClientComponent} from "./client/edit-client/edit-client.component";
 import {EditRoleComponent} from "./role/edit-role/edit-role.component";
 import {EditUserComponent} from "./user/edit-user/edit-user.component";
 import {EditProductComponent} from "./product/edit-product/edit-product.component";
+import {DashboardGuard} from "../guards/dashboard.guard";
 
 const routes: Routes = [
-  {path: '', component: HomeComponent , children: [
+  {
+    path: '', component: HomeComponent,
+    canActivateChild: [DashboardGuard],
+    children: [
       { path: 'usuarios', component: UserComponent},
       { path: 'roles', component: RoleComponent},
       { path: 'clientes', component: ClientComponent},

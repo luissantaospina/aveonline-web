@@ -35,7 +35,6 @@ export class LoginComponent implements OnInit {
   onLogin(form: any) {
     this.api.login(form).subscribe(
       (result: any) => {
-        console.log(result.access_token)
         localStorage.setItem("token", result.access_token)
         this.router.navigate(['inicio/usuarios'])
       },
