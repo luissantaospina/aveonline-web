@@ -1,33 +1,44 @@
-<div class="col-8">
-  <table
-    class="table"
-    aria-describedby="tableProducts"
-    id="tableProducts"
-  >
-    <thead id="theadTableProducts">
-    <tr>
-      <th class="h5" id="theadProductCode">Codigó</th>
-      <th class="h5" id="theadProductName">Nombre</th>
-      <th class="h5" id="theadProductCategory">Categoria</th>
-      <th class="h5" id="theadProductPrice">Precio</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="trbody" *ngFor="let product of products">
-      <td>
-        <dd class="id">{{product.codigo}}</dd>
-      </td>
-      <td>
-        <dd class="brand">{{product.nombre}}</dd>
-      </td>
-      <td>
-        <dd class="line">{{product.categoria}}</dd>
-      </td>
-      <td>
-        <dd class="model">{{product.precio}}</dd>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-</div>
+<div class="container">
+    <mat-toolbar>
+      <span>Productos</span>
+    </mat-toolbar>
 
+    <table mat-table [dataSource]="products" class="mat-elevation-z2">
+      <ng-container matColumnDef="code">
+        <th mat-header-cell *matHeaderCellDef> Codigo </th>
+        <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="category">
+        <th mat-header-cell *matHeaderCellDef> Categoria </th>
+        <td mat-cell *matCellDef="let element"> {{element.categoria}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Precio </th>
+        <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element" style="text-align: right">
+          <a class="pointer pointer-edit" matTooltip="Editar producto"> <mat-icon>edit</mat-icon> </a>
+          <a
+            class="pointer delete"
+            matTooltip="Eliminar producto"
+            (click)="deleteProduct(element.id)"
+          >
+            <mat-icon>delete</mat-icon>
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

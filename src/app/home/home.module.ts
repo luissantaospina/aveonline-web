@@ -11,6 +11,10 @@ import { ProductComponent } from './product/product.component';
 import { RoleComponent } from './role/role.component';
 import { UserComponent } from './user/user.component';
 import { ClientComponent } from './client/client.component';
+import {MatListModule} from "@angular/material/list";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatTableModule} from '@angular/material/table';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -27,7 +31,11 @@ import { ClientComponent } from './client/client.component';
     HomeRoutingModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatListModule,
+    MatSidenavModule,
+    MatTableModule,
+    MatTooltipModule
   ]
 })
 export class HomeModule { }
