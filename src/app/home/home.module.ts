@@ -24,7 +24,8 @@ import { EditClientComponent } from './client/edit-client/edit-client.component'
 import { EditRoleComponent } from './role/edit-role/edit-role.component';
 import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { EditProductComponent } from './product/edit-product/edit-product.component';
-// import {DashboardGuard} from "../guards/dashboard.guard";
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorService } from '../interceptors/auth-interceptor.service';
 
 
 @NgModule({
@@ -59,7 +60,11 @@ import { EditProductComponent } from './product/edit-product/edit-product.compon
       FormsModule
   ],
   providers: [
-    // DashboardGuard
-  ]
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
+  ],
 })
 export class HomeModule { }
