@@ -12,7 +12,7 @@ export class LoginService {
 
   private apiUrl: string = environment.baseUrl
   constructor(private http: HttpClient) { }
-  
+
   login(form:LoginInterfase): Observable<ResponseInterfase> {
     return this.http.post<ResponseInterfase>(this.apiUrl + 'login', form)
   }
