@@ -8,12 +8,22 @@ import {Client} from "./client";
   styleUrls: ['./client.component.css']
 })
 export class ClientComponent implements OnInit {
-  constructor(private userService: ClientService) { }
+  constructor(private clientService: ClientService) { }
+
+  client: Client | undefined
+  displayedColumns: string[] = ['name', 'role', 'actions'];
 
   clients: Array<Client> = []
 
+  deleteClient(clientId: string): void {
+    this.clientService.deleteClient(clientId).subscribe(client => {
+      this.client = client
+    })
+    this.getClientsList()
+  }
+
   getClientsList(): void {
-    this.userService.getClients().subscribe(clients => {
+    this.clientService.getClients().subscribe(clients => {
       this.clients = clients
     })
   }

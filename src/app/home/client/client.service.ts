@@ -12,6 +12,10 @@ export class ClientService {
 
   constructor(private http: HttpClient) { }
 
+  deleteClient(id: string): Observable<Client> {
+    return this.http.delete<Client>(this.apiUrl + 'client/' + id)
+  }
+
   getClients(): Observable<Client[]> {
     return this.http.get<Client[]>(this.apiUrl + 'clients')
   }
