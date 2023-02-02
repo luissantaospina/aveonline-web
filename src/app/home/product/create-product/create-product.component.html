@@ -1,14 +1,61 @@
 <div class="wrapper fadeInDown">
   <div id="formContent">
+    <h1 class="mt-2">Crear producto</h1>
     <form [formGroup]="createProductForm" (ngSubmit)="createProduct(createProductForm.value)">
+      <input
+        type="text" class="fadeIn second mt-3"
+        formControlName="codigo" placeholder="código"
+      >
+      <div class=" danger-alert"
+        *ngIf=" createProductForm.get('codigo')!.hasError('required') &&
+             createProductForm.get('codigo')!.touched"
+      > Código requerido </div>
+
       <input
         type="text" class="fadeIn second mt-3"
         formControlName="nombre" placeholder="nombre"
       >
+      <div class=" danger-alert"
+           *ngIf=" createProductForm.get('nombre')!.hasError('required') &&
+             createProductForm.get('nombre')!.touched"
+      > Nombre requerido </div>
+
       <input
         type="text" class="fadeIn third"
         formControlName="descripcion" placeholder="descripcion"
       >
+      <div class=" danger-alert"
+           *ngIf=" createProductForm.get('descripcion')!.hasError('required') &&
+             createProductForm.get('descripcion')!.touched"
+      > Descripción requerida </div>
+
+      <input
+        type="text" class="fadeIn third"
+        formControlName="categoria" placeholder="categoria"
+      >
+      <div class=" danger-alert"
+           *ngIf=" createProductForm.get('categoria')!.hasError('required') &&
+             createProductForm.get('categoria')!.touched"
+      > Categoria requerida </div>
+
+      <input
+        type="number" class="fadeIn third"
+        formControlName="cantidad" placeholder="cantidad"
+      >
+      <div class=" danger-alert"
+           *ngIf=" createProductForm.get('cantidad')!.hasError('required') &&
+             createProductForm.get('cantidad')!.touched"
+      > Cantidad requerida </div>
+
+      <input
+        type="number" class="fadeIn third"
+        formControlName="precio" placeholder="precio"
+      >
+      <div class=" danger-alert"
+           *ngIf=" createProductForm.get('precio')!.hasError('required') &&
+             createProductForm.get('precio')!.touched"
+      > Precio requerida </div>
+
       <input
         type="submit" class="fadeIn fourth mt-3"
         value="Crear" [disabled]="createProductForm.invalid"

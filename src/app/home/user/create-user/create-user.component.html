@@ -1,0 +1,47 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <h1 class="mt-2">Crear usuario</h1>
+    <form [formGroup]="createUserForm" (ngSubmit)="createProduct(createUserForm.value)">
+      <input
+        type="text" class="fadeIn second mt-3"
+        formControlName="nombre" placeholder="nombre"
+      >
+      <div class=" danger-alert"
+           *ngIf=" createUserForm.get('nombre')!.hasError('required') &&
+             createUserForm.get('nombre')!.touched"
+      > Nombre requerido </div>
+
+      <input
+        type="text" class="fadeIn second mt-3"
+        formControlName="login" placeholder="email"
+      >
+      <div class=" danger-alert"
+           *ngIf=" createUserForm.get('login')!.hasError('required') &&
+             createUserForm.get('login')!.touched"
+      > Email requerido </div>
+
+      <input
+        type="text" class="fadeIn second mt-3"
+        formControlName="clave" placeholder="clave"
+      >
+      <div class=" danger-alert"
+           *ngIf=" createUserForm.get('clave')!.hasError('required') &&
+             createUserForm.get('clave')!.touched"
+      > Clave requerida </div>
+
+      <input
+        type="number" class="fadeIn second mt-3"
+        formControlName="rol_id" placeholder="rol"
+      >
+      <div class=" danger-alert"
+           *ngIf=" createUserForm.get('rol_id')!.hasError('required') &&
+             createUserForm.get('rol_id')!.touched"
+      > Rol requerido </div>
+
+      <input
+        type="submit" class="fadeIn fourth mt-3"
+        value="Crear" [disabled]="createUserForm.invalid"
+      >
+    </form>
+  </div>
+</div>

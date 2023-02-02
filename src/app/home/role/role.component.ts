@@ -22,10 +22,9 @@ export class RoleComponent implements OnInit {
 
   deleteRole(roleId: string): void {
     this.roleService.deleteRole(roleId).subscribe(role => {
-      this.role = role
+      this.openSnackBar('Rol eliminado exitosamente')
+      this.getRolesList()
     })
-    this.openSnackBar('Rol eliminado exitosamente')
-    this.getRolesList()
   }
 
   getRolesList(): void {

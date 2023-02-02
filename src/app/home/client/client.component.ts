@@ -21,10 +21,9 @@ export class ClientComponent implements OnInit {
 
   deleteClient(clientId: string): void {
     this.clientService.deleteClient(clientId).subscribe(client => {
-      this.client = client
+      this.openSnackBar('Cliente eliminado exitosamente')
+      this.getClientsList()
     })
-    this.openSnackBar('Cliente eliminado exitosamente')
-    this.getClientsList()
   }
 
   getClientsList(): void {

@@ -18,6 +18,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { CreateProductComponent } from './product/create-product/create-product.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { CreateUserComponent } from './user/create-user/create-user.component';
+import { CreateClientComponent } from './client/create-client/create-client.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import {ReactiveFormsModule} from "@angular/forms";
     RoleComponent,
     UserComponent,
     ClientComponent,
-    CreateProductComponent
+    CreateProductComponent,
+    CreateUserComponent,
+    CreateClientComponent
   ],
   imports: [
     CommonModule,
