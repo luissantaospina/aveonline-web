@@ -13,8 +13,11 @@ export class LoginService {
   private apiUrl: string = environment.baseUrl
   constructor(private http: HttpClient) { }
 
+  // login(form:LoginInterfase): Observable<ResponseInterfase> {
+  //   let direction = this.apiUrl + 'users/login'
+  //   return this.http.post<ResponseInterfase>(direction, form)
+  // }
   login(form:LoginInterfase): Observable<ResponseInterfase> {
-    let direction = this.apiUrl + 'users/login'
-    return this.http.post<ResponseInterfase>(direction, form)
+    return this.http.post<ResponseInterfase>(this.apiUrl + 'auth/login', form)
   }
 }
