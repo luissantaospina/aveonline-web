@@ -20,9 +20,13 @@ export class EditProductComponent implements OnInit {
 
   product: any
 
+  productSave: any
+
   updateProductForm!: FormGroup
 
   ngOnInit(): void {
+    this.product = this.route.snapshot.params
+    this.getProduct(this.product.id)
     this.updateProductForm = this.formBuilder.group({
       nombre: ["", Validators.required],
       cantidad: ["", Validators.required],
@@ -31,7 +35,20 @@ export class EditProductComponent implements OnInit {
       descripcion: ["", Validators.required],
       precio: ["", Validators.required]
     })
-    this.product = this.route.snapshot.params
+  }
+
+  getProduct(id: string): void {
+    this.productService.getProduct(id).subscribe(product => {
+      this.productSave = product
+      this.updateProductForm = this.formBuilder.group({
+        nombre: [this.productSave.nombre, Validators.required],
+        cantidad: [this.productSave.cantidad, Validators.required],
+        categoria: [this.productSave.categoria, Validators.required],
+        codigo: [this.productSave.cantidad, Validators.required],
+        descripcion: [this.productSave.descripcion, Validators.required],
+        precio: [this.productSave.precio, Validators.required],
+      })
+    })
   }
 
   updateProduct(product: Product) {

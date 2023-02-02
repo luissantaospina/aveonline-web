@@ -20,13 +20,25 @@ export class EditRoleComponent implements OnInit {
 
   role: any
 
+  roleSave: any
+
   updateRoleForm!: FormGroup
 
   ngOnInit(): void {
+    this.role = this.route.snapshot.params
+    this.getRole(this.role.id)
     this.updateRoleForm = this.formBuilder.group({
       nombre: ["", Validators.required]
     })
-    this.role = this.route.snapshot.params
+  }
+
+  getRole(id: string): void {
+    this.roleService.getRole(id).subscribe(role => {
+      this.roleSave = role
+      this.updateRoleForm = this.formBuilder.group({
+        nombre: [this.roleSave.nombre, Validators.required]
+      })
+    })
   }
 
   updateProduct(role: Role) {

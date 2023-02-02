@@ -27,4 +27,8 @@ export class ClientService {
   updateClient(id: string, client: Client): Observable<Client> {
     return this.http.put<Client>(this.apiUrl + 'client/' + id, client)
   }
+
+  getClient(id: string): Observable<Client> {
+    return this.http.get<Client>(this.apiUrl + 'client/' + id)
+  }
 }

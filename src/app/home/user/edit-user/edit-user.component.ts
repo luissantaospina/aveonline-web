@@ -19,17 +19,32 @@ export class EditUserComponent implements OnInit {
   ) { }
 
   user: any
+  userSave: any
+
 
   updateUserForm!: FormGroup
 
   ngOnInit(): void {
+    this.user = this.route.snapshot.params
+    this.getUser(this.user.id)
     this.updateUserForm = this.formBuilder.group({
       nombre: ["", Validators.required],
       rol_id: ["", Validators.required],
       login: ["", Validators.required],
       clave: ["", Validators.required]
     })
-    this.user = this.route.snapshot.params
+  }
+
+  getUser(id: string): void {
+    this.userService.getUser(id).subscribe(user => {
+      this.userSave = user
+      this.updateUserForm = this.formBuilder.group({
+        nombre: [this.userSave.nombre, Validators.required],
+        rol_id: [this.userSave.role.id, Validators.required],
+        login: [this.userSave.login, Validators.required],
+        clave: ["", Validators.required]
+      })
+    })
   }
 
   updateProduct(user: User) {

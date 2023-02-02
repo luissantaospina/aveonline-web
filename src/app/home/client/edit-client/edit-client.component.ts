@@ -22,20 +22,35 @@ export class EditClientComponent implements OnInit {
 
   client: any
 
+  clientSave: any
+
   ngOnInit(): void {
+    this.client = this.route.snapshot.params
+    this.getClient(this.client.id)
     this.updateClientForm = this.formBuilder.group({
       nombre: ["", Validators.required],
       rol_id: ["", Validators.required],
       login: ["", Validators.required],
       clave: ["", Validators.required]
     })
-    this.client = this.route.snapshot.params
   }
 
   updateClient(client: Client) {
     this.clientService.updateClient(this.client.id, client).subscribe(client => {
       this.updateClientForm.reset()
       this.openSnackBar('Cliente editado exitosamente')
+    })
+  }
+
+  getClient(id: string): void {
+    this.clientService.getClient(id).subscribe(client => {
+      this.clientSave = client
+      this.updateClientForm = this.formBuilder.group({
+        nombre: [this.clientSave.nombre, Validators.required],
+        rol_id: [this.clientSave.role.id, Validators.required],
+        login: [this.clientSave.login, Validators.required],
+        clave: ["", Validators.required]
+      })
     })
   }
 

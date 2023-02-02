@@ -28,4 +28,8 @@ export class RoleService {
   updateRole(id: string, role: Role): Observable<Role> {
     return this.http.put<Role>(this.apiUrl + 'role/' + id, role)
   }
+
+  getRole(id: string): Observable<Role> {
+    return this.http.get<Role>(this.apiUrl + 'role/' + id)
+  }
 }
