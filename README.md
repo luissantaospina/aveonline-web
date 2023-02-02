@@ -16,14 +16,14 @@ Funcionalmente se puede crear, editar, eliminar y consultar usuarios, clientes, 
 4. [x] Angular cli v14.2.10
 
 ## Instalación
-1. [x] Descargar el repositorio de `https://github.com/luissantaospina/aveonline-web.git` con el comando `clone https://github.com/luissantaospina/aveonline-web.git`
+1. [x] Descargar el repositorio de https://github.com/luissantaospina/aveonline-web.git con el comando `clone https://github.com/luissantaospina/aveonline-web.git`
 2. [x] Moverse a la carpeta del proyecto `cd aveonline-web`
 3. [x] Instalar dependencias `npm install`
-4. [x] Iniciar aplicación `ng serve`
 
 ## Inicio
-1. [x] Generalmente se despliega en `http://localhost:4200/` (verificar puesto que esto puede cambiar)
-2. [x] Para iniciar sesión se cuenta con 2 usuarios base:
+1. [ ] Iniciar aplicación `ng serve`
+2. [ ] Generalmente se despliega en http://localhost:4200/ (verificar puesto que esto puede cambiar)
+3. [ ] Para iniciar sesión se cuenta con 2 usuarios base:
 
 | Nombre            | Email | Clave    | Rol |
 -------------------|-------|----------|----|
