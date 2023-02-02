@@ -1,0 +1,53 @@
+<div class="container">
+    <mat-toolbar>
+      <span>Productos</span>
+      <div class="flex"></div>
+      <button mat-fab color="primary" routerLink="/inicio/productos/crear">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <table mat-table [dataSource]="products" class="mat-elevation-z2">
+      <ng-container matColumnDef="code">
+        <th mat-header-cell *matHeaderCellDef> Codigo </th>
+        <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="category">
+        <th mat-header-cell *matHeaderCellDef> Categoria </th>
+        <td mat-cell *matCellDef="let element"> {{element.categoria}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Precio </th>
+        <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element" style="text-align: right">
+          <a
+            class="pointer pointer-edit"
+            matTooltip="Editar producto"
+            routerLink="/inicio/productos/editar/{{element.id}}"
+          >
+            <mat-icon>edit</mat-icon> </a>
+          <a
+            class="pointer delete"
+            matTooltip="Eliminar producto"
+            (click)="deleteProduct(element.id)"
+          >
+            <mat-icon>delete</mat-icon>
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

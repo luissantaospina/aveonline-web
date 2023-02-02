@@ -1,0 +1,50 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <h1 class="mt-2">Crear clientes</h1>
+    <form [formGroup]="createClientForm" (ngSubmit)="createProduct(createClientForm.value)">
+      <input
+        type="text" class="fadeIn second mt-3"
+        formControlName="nombre" placeholder="nombre"
+      >
+      <div class=" danger-alert"
+           *ngIf=" createClientForm.get('nombre')!.hasError('required') &&
+             createClientForm.get('nombre')!.touched"
+      > Nombre requerido </div>
+
+      <input
+        type="text" class="fadeIn second mt-3"
+        formControlName="login" placeholder="email"
+      >
+      <div class=" danger-alert"
+           *ngIf=" createClientForm.get('login')!.hasError('required') &&
+             createClientForm.get('login')!.touched"
+      > Email requerido </div>
+
+      <input
+        type="text" class="fadeIn second mt-3"
+        formControlName="clave" placeholder="clave"
+      >
+      <div class=" danger-alert"
+           *ngIf=" createClientForm.get('clave')!.hasError('required') &&
+             createClientForm.get('clave')!.touched"
+      > Clave requerida </div>
+
+      <select
+        [(ngModel)]="roleSelect"
+        [ngModelOptions]="{standalone: true}"
+        (change)="changeRole()"
+      >
+        <option [value]="role.id" *ngFor="let role of roles">{{role.nombre}}</option>
+      </select>
+      <div class=" danger-alert"
+           *ngIf=" createClientForm.get('rol_id')!.hasError('required') &&
+             createClientForm.get('rol_id')!.touched"
+      > Rol requerido </div>
+
+      <input
+        type="submit" class="fadeIn fourth mt-3"
+        value="Crear" [disabled]="createClientForm.invalid"
+      >
+    </form>
+  </div>
+</div>
