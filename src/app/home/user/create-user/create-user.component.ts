@@ -21,9 +21,7 @@ export class CreateUserComponent implements OnInit {
   ) { }
 
   createUserForm!: FormGroup
-
   roles: Array<Role> = []
-
   roleSelect: string = ''
 
   ngOnInit(): void {

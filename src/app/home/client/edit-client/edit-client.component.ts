@@ -22,13 +22,9 @@ export class EditClientComponent implements OnInit {
   ) { }
 
   updateClientForm!: FormGroup
-
   client: any
-
   clientSave: any
-
   roles: Array<Role> = []
-
   roleSelect: string = ''
 
   ngOnInit(): void {
@@ -65,7 +61,8 @@ export class EditClientComponent implements OnInit {
   getClient(id: string): void {
     this.clientService.getClient(id).subscribe(client => {
       this.clientSave = client
-      this.updateClientForm = this.formBuilder.group({
+      this.roleSelect = this.clientSave.role.id
+        this.updateClientForm = this.formBuilder.group({
         nombre: [this.clientSave.nombre, Validators.required],
         rol_id: [this.clientSave.role.id, Validators.required],
         login: [this.clientSave.login, Validators.required],

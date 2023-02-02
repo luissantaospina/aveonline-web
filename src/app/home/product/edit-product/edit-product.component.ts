@@ -19,9 +19,7 @@ export class EditProductComponent implements OnInit {
   ) { }
 
   product: any
-
   productSave: any
-
   updateProductForm!: FormGroup
 
   ngOnInit(): void {

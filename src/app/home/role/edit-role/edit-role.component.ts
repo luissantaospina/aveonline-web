@@ -19,9 +19,7 @@ export class EditRoleComponent implements OnInit {
   ) { }
 
   role: any
-
   roleSave: any
-
   updateRoleForm!: FormGroup
 
   ngOnInit(): void {

@@ -54,6 +54,7 @@ export class EditUserComponent implements OnInit {
   getUser(id: string): void {
     this.userService.getUser(id).subscribe(user => {
       this.userSave = user
+      this.roleSelect = this.userSave.role.id
       this.updateUserForm = this.formBuilder.group({
         nombre: [this.userSave.nombre, Validators.required],
         rol_id: [this.userSave.role.id, Validators.required],
