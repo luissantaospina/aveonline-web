@@ -21,6 +21,10 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { CreateUserComponent } from './user/create-user/create-user.component';
 import { CreateClientComponent } from './client/create-client/create-client.component';
 import { CreateRolComponent } from './role/create-rol/create-rol.component';
+import { EditClientComponent } from './client/edit-client/edit-client.component';
+import { EditRoleComponent } from './role/edit-role/edit-role.component';
+import { EditUserComponent } from './user/edit-user/edit-user.component';
+import { EditProductComponent } from './product/edit-product/edit-product.component';
 
 
 @NgModule({
@@ -34,7 +38,11 @@ import { CreateRolComponent } from './role/create-rol/create-rol.component';
     CreateProductComponent,
     CreateUserComponent,
     CreateClientComponent,
-    CreateRolComponent
+    CreateRolComponent,
+    EditClientComponent,
+    EditRoleComponent,
+    EditUserComponent,
+    EditProductComponent
   ],
   imports: [
     CommonModule,

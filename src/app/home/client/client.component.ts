@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ClientService} from "./client.service";
 import {Client} from "./client";
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-client',
@@ -11,7 +12,8 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class ClientComponent implements OnInit {
   constructor(
     private clientService: ClientService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private router:Router
   ) { }
 
   client: Client | undefined

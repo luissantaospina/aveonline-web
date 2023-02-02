@@ -1,19 +1,19 @@
 <div class="wrapper fadeInDown">
   <div id="formContent">
-    <h1 class="mt-2">Crear rol</h1>
-    <form [formGroup]="createRoleForm" (ngSubmit)="createProduct(createRoleForm.value)">
+    <h1 class="mt-2">Editar rol</h1>
+    <form [formGroup]="updateRoleForm" (ngSubmit)="updateProduct(updateRoleForm.value)">
       <input
         type="text" class="fadeIn second mt-3"
         formControlName="nombre" placeholder="nombre"
       >
       <div class=" danger-alert"
-           *ngIf=" createRoleForm.get('nombre')!.hasError('required') &&
-             createRoleForm.get('nombre')!.touched"
+           *ngIf=" updateRoleForm.get('nombre')!.hasError('required') &&
+             updateRoleForm.get('nombre')!.touched"
       > Nombre requerido </div>
 
       <input
         type="submit" class="fadeIn fourth mt-3"
-        value="Crear" [disabled]="createRoleForm.invalid"
+        value="Editar" [disabled]="updateRoleForm.invalid"
       >
     </form>
   </div>

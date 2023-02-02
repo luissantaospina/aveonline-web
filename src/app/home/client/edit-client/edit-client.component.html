@@ -1,0 +1,47 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <h1 class="mt-2">Editar cliente</h1>
+    <form [formGroup]="updateClientForm" (ngSubmit)="updateClient(updateClientForm.value)">
+      <input
+        type="text" class="fadeIn second mt-3"
+        formControlName="nombre" placeholder="nombre"
+      >
+      <div class=" danger-alert"
+           *ngIf=" updateClientForm.get('nombre')!.hasError('required') &&
+             updateClientForm.get('nombre')!.touched"
+      > Nombre requerido </div>
+
+      <input
+        type="text" class="fadeIn second mt-3"
+        formControlName="login" placeholder="email"
+      >
+      <div class=" danger-alert"
+           *ngIf=" updateClientForm.get('login')!.hasError('required') &&
+             updateClientForm.get('login')!.touched"
+      > Email requerido </div>
+
+      <input
+        type="text" class="fadeIn second mt-3"
+        formControlName="clave" placeholder="clave"
+      >
+      <div class=" danger-alert"
+           *ngIf=" updateClientForm.get('clave')!.hasError('required') &&
+             updateClientForm.get('clave')!.touched"
+      > Clave requerida </div>
+
+      <input
+        type="number" class="fadeIn second mt-3"
+        formControlName="rol_id" placeholder="rol"
+      >
+      <div class=" danger-alert"
+           *ngIf=" updateClientForm.get('rol_id')!.hasError('required') &&
+             updateClientForm.get('rol_id')!.touched"
+      > Rol requerido </div>
+
+      <input
+        type="submit" class="fadeIn fourth mt-3"
+        value="Editar" [disabled]="updateClientForm.invalid"
+      >
+    </form>
+  </div>
+</div>

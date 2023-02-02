@@ -19,11 +19,11 @@ export class ProductsService {
     return this.http.delete<Product>(this.apiUrl + 'product/' + id)
   }
 
-  updateProduct(id: string, product: Product): Observable<Product> {
-    return this.http.put<Product>(this.apiUrl + 'product/' + id, product)
-  }
-
   createProduct(product: Product): Observable<Product> {
     return this.http.post<Product>(this.apiUrl + 'products', product)
+  }
+
+  updateProduct(id: string, product: Product): Observable<Product> {
+    return this.http.put<Product>(this.apiUrl + 'product/' + id, product)
   }
 }

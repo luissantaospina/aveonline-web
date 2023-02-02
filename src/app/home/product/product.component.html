@@ -31,7 +31,12 @@
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let element" style="text-align: right">
-          <a class="pointer pointer-edit" matTooltip="Editar producto"> <mat-icon>edit</mat-icon> </a>
+          <a
+            class="pointer pointer-edit"
+            matTooltip="Editar producto"
+            routerLink="/inicio/productos/editar/{{element.id}}"
+          >
+            <mat-icon>edit</mat-icon> </a>
           <a
             class="pointer delete"
             matTooltip="Eliminar producto"
