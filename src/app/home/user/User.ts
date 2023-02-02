@@ -1,16 +1,16 @@
 export class User {
   nombre: string;
   rol_id: number;
-  login: string;
+  email: string;
 
   constructor(
     nombre: string,
     rol_id: number,
-    login: string
+    email: string
   )
   {
     this.nombre = nombre;
     this.rol_id = rol_id;
-    this.login = login;
+    this.email = email;
   }
 }

@@ -6,14 +6,9 @@
         class="mt-4 mb-2 aveonline"
         alt="logo-aveonline"
       >
-      <input type="text" id="login" class="fadeIn second mt-3" formControlName="nombre" placeholder="nombre">
-      <input type="password" id="password" class="fadeIn third" formControlName="clave" placeholder="clave">
+      <input type="text" id="email" class="fadeIn second mt-3" formControlName="email" placeholder="email">
+      <input type="password" id="password" class="fadeIn third" formControlName="password" placeholder="clave">
       <input type="submit" class="fadeIn fourth mt-3" value="Iniciar sesion" [disabled]="loginForm.invalid">
     </form>
-
-    <div class="alert alert-danger" *ngIf="errorStatus">
-      <p>El email y/o contraseña es incorrecto</p>
-    </div>
-
   </div>
 </div>
