@@ -19,6 +19,9 @@ Funcionalmente se puede crear, editar, eliminar y consultar usuarios, clientes, 
 1. [x] Descargar el repositorio de https://github.com/luissantaospina/aveonline-web.git con el comando `clone https://github.com/luissantaospina/aveonline-web.git`
 2. [x] Moverse a la carpeta del proyecto `cd aveonline-web`
 3. [x] Instalar dependencias `npm install`
+4. [x] Configurar la url base donde esta corriendo el backend para permitir la comunicación entre ambos, esto se realiza en el archivo `src/environments/environment.ts` y se cambia la variable `baseUrl` colocando la url del backend. Solo debe cambiar o reemplazar `http://127.0.0.1:8000`
+![base.png](src%2Fassets%2Fbase.png)
+
 
 ## Inicio
 1. [ ] Iniciar aplicación `ng serve`
