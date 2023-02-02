@@ -8,6 +8,7 @@ import {ClientComponent} from "./client/client.component";
 import {CreateProductComponent} from "./product/create-product/create-product.component";
 import {CreateUserComponent} from "./user/create-user/create-user.component";
 import {CreateClientComponent} from "./client/create-client/create-client.component";
+import {CreateRolComponent} from "./role/create-rol/create-rol.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent , children: [
@@ -17,7 +18,8 @@ const routes: Routes = [
       { path: 'productos', component: ProductComponent},
       { path: 'productos/crear', component: CreateProductComponent},
       { path: 'usuarios/crear', component: CreateUserComponent},
-      { path: 'clientes/crear', component: CreateClientComponent}
+      { path: 'clientes/crear', component: CreateClientComponent},
+      { path: 'roles/crear', component: CreateRolComponent}
     ]}
 ];
 

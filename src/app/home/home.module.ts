@@ -20,6 +20,7 @@ import { CreateProductComponent } from './product/create-product/create-product.
 import {ReactiveFormsModule} from "@angular/forms";
 import { CreateUserComponent } from './user/create-user/create-user.component';
 import { CreateClientComponent } from './client/create-client/create-client.component';
+import { CreateRolComponent } from './role/create-rol/create-rol.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { CreateClientComponent } from './client/create-client/create-client.comp
     ClientComponent,
     CreateProductComponent,
     CreateUserComponent,
-    CreateClientComponent
+    CreateClientComponent,
+    CreateRolComponent
   ],
   imports: [
     CommonModule,

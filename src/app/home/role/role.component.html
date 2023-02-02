@@ -1,6 +1,10 @@
 <div class="container">
   <mat-toolbar>
     <span>Roles</span>
+    <div class="flex"></div>
+    <button mat-fab color="primary" routerLink="/inicio/roles/crear">
+      <mat-icon>add</mat-icon>
+    </button>
   </mat-toolbar>
 
   <table mat-table [dataSource]="roles" class="mat-elevation-z2">

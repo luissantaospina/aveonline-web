@@ -1,0 +1,20 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <h1 class="mt-2">Crear usuario</h1>
+    <form [formGroup]="createRoleForm" (ngSubmit)="createProduct(createRoleForm.value)">
+      <input
+        type="text" class="fadeIn second mt-3"
+        formControlName="nombre" placeholder="nombre"
+      >
+      <div class=" danger-alert"
+           *ngIf=" createRoleForm.get('nombre')!.hasError('required') &&
+             createRoleForm.get('nombre')!.touched"
+      > Nombre requerido </div>
+
+      <input
+        type="submit" class="fadeIn fourth mt-3"
+        value="Crear" [disabled]="createRoleForm.invalid"
+      >
+    </form>
+  </div>
+</div>

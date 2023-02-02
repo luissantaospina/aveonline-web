@@ -21,4 +21,8 @@ export class RoleService {
   getRoles(): Observable<Role[]> {
     return this.http.get<Role[]>(this.apiUrl + 'roles')
   }
+
+  createRole(role: Role): Observable<Role> {
+    return this.http.post<Role>(this.apiUrl + 'roles', role)
+  }
 }
