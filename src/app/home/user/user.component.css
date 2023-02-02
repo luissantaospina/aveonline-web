@@ -1,0 +1,19 @@
+table {
+  width: 100%;
+}
+
+th {
+  width: 40%;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.pointer-edit{
+  margin-right: 15px;
+}
+
+.delete{
+  color: #c00a16;
+}
