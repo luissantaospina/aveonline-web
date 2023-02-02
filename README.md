@@ -8,6 +8,7 @@ Funcionalmente se puede crear, editar, eliminar y consultar usuarios, clientes, 
 
 ### Programas
 1. [x] Node https://nodejs.org/es/
+2. GIT
 
 ### Versiones
 1. [x] Node v14.20.1npm
@@ -16,7 +17,7 @@ Funcionalmente se puede crear, editar, eliminar y consultar usuarios, clientes, 
 4. [x] Angular cli v14.2.10
 
 ## Instalación
-1. [x] Descargar el repositorio de https://github.com/luissantaospina/aveonline-web.git con el comando `clone https://github.com/luissantaospina/aveonline-web.git`
+1. [x] Descargar el repositorio de https://github.com/luissantaospina/aveonline-web.git con el comando `git clone https://github.com/luissantaospina/aveonline-web.git`
 2. [x] Moverse a la carpeta del proyecto `cd aveonline-web`
 3. [x] Instalar dependencias `npm install`
 4. [x] Configurar la url base donde esta corriendo el backend para permitir la comunicación entre ambos, esto se realiza en el archivo `src/environments/environment.ts` y se cambia la variable `baseUrl` colocando la url del backend. Solo debe cambiar o reemplazar `http://127.0.0.1:8000`
