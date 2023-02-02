@@ -31,6 +31,6 @@ Funcionalmente se puede crear, editar, eliminar y consultar usuarios, clientes, 
    | Luis Doe          | usuario@aveonline.co | password | Usuario |
 
 ## Previos
-![login](login.png)
-![users](images/users.png)
-![create](create.png)
+![login.png](src%2Fassets%2Flogin.png)
+![users.png](src%2Fassets%2Fusers.png)
+![create.png](src%2Fassets%2Fcreate.png)
