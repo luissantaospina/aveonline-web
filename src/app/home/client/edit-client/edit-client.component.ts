@@ -4,6 +4,8 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Client} from "../client";
 import {ActivatedRoute} from '@angular/router'
+import {Role} from "../../role/role";
+import {RoleService} from "../../role/role.service";
 
 @Component({
   selector: 'app-edit-client',
@@ -15,7 +17,8 @@ export class EditClientComponent implements OnInit {
     private clientService: ClientService,
     private _snackBar: MatSnackBar,
     private formBuilder: FormBuilder,
-    private route:ActivatedRoute
+    private route:ActivatedRoute,
+    private roleService: RoleService
   ) { }
 
   updateClientForm!: FormGroup
@@ -24,7 +27,12 @@ export class EditClientComponent implements OnInit {
 
   clientSave: any
 
+  roles: Array<Role> = []
+
+  roleSelect: string = ''
+
   ngOnInit(): void {
+    this.getRolesList()
     this.client = this.route.snapshot.params
     this.getClient(this.client.id)
     this.updateClientForm = this.formBuilder.group({
@@ -32,6 +40,18 @@ export class EditClientComponent implements OnInit {
       rol_id: ["", Validators.required],
       login: ["", Validators.required],
       clave: ["", Validators.required]
+    })
+  }
+
+  changeRole() {
+    this.updateClientForm.patchValue({
+      rol_id: this.roleSelect
+    });
+  }
+
+  getRolesList(): void {
+    this.roleService.getRoles().subscribe((roles: Role[]) => {
+      this.roles = roles
     })
   }
 

@@ -4,6 +4,8 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {User} from "../User";
 import {ActivatedRoute} from '@angular/router'
+import {Role} from "../../role/role";
+import {RoleService} from "../../role/role.service";
 
 @Component({
   selector: 'app-edit-user',
@@ -15,16 +17,18 @@ export class EditUserComponent implements OnInit {
     private userService: UserService,
     private _snackBar: MatSnackBar,
     private formBuilder: FormBuilder,
-    private route:ActivatedRoute
+    private route:ActivatedRoute,
+    private roleService: RoleService
   ) { }
 
   user: any
   userSave: any
-
-
+  roles: Array<Role> = []
+  roleSelect: string = ''
   updateUserForm!: FormGroup
 
   ngOnInit(): void {
+    this.getRolesList()
     this.user = this.route.snapshot.params
     this.getUser(this.user.id)
     this.updateUserForm = this.formBuilder.group({
@@ -32,6 +36,18 @@ export class EditUserComponent implements OnInit {
       rol_id: ["", Validators.required],
       login: ["", Validators.required],
       clave: ["", Validators.required]
+    })
+  }
+
+  changeRole() {
+    this.updateUserForm.patchValue({
+      rol_id: this.roleSelect
+    });
+  }
+
+  getRolesList(): void {
+    this.roleService.getRoles().subscribe((roles: Role[]) => {
+      this.roles = roles
     })
   }
 

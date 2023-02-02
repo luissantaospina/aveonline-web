@@ -29,10 +29,13 @@
              createClientForm.get('clave')!.touched"
       > Clave requerida </div>
 
-      <input
-        type="number" class="fadeIn second mt-3"
-        formControlName="rol_id" placeholder="rol"
+      <select
+        [(ngModel)]="roleSelect"
+        [ngModelOptions]="{standalone: true}"
+        (change)="changeRole()"
       >
+        <option [value]="role.id" *ngFor="let role of roles">{{role.nombre}}</option>
+      </select>
       <div class=" danger-alert"
            *ngIf=" createClientForm.get('rol_id')!.hasError('required') &&
              createClientForm.get('rol_id')!.touched"

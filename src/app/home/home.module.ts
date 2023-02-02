@@ -17,7 +17,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { CreateProductComponent } from './product/create-product/create-product.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CreateUserComponent } from './user/create-user/create-user.component';
 import { CreateClientComponent } from './client/create-client/create-client.component';
 import { CreateRolComponent } from './role/create-rol/create-rol.component';
@@ -44,18 +44,19 @@ import { EditProductComponent } from './product/edit-product/edit-product.compon
     EditUserComponent,
     EditProductComponent
   ],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatListModule,
-    MatSidenavModule,
-    MatTableModule,
-    MatTooltipModule,
-    MatSnackBarModule,
-    ReactiveFormsModule
-  ]
+    imports: [
+        CommonModule,
+        HomeRoutingModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        MatListModule,
+        MatSidenavModule,
+        MatTableModule,
+        MatTooltipModule,
+        MatSnackBarModule,
+        ReactiveFormsModule,
+        FormsModule
+    ]
 })
 export class HomeModule { }
