@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from "./user.service";
 import {User} from "./User";
-import {Product} from "../product/Product";
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-user',
@@ -11,7 +11,10 @@ import {Product} from "../product/Product";
 export class UserComponent implements OnInit {
   user: User | undefined
   displayedColumns: string[] = ['name', 'role', 'actions'];
-  constructor(private userService: UserService) { }
+  constructor(
+    private userService: UserService,
+    private _snackBar: MatSnackBar
+  ) { }
 
   users: Array<User> = []
 
@@ -19,6 +22,7 @@ export class UserComponent implements OnInit {
     this.userService.deleteUser(userId).subscribe(user => {
       this.user = user
     })
+    this.openSnackBar('Usuario eliminado exitosamente')
     this.getUsersList()
   }
 
@@ -30,5 +34,15 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUsersList()
+  }
+
+  openSnackBar(message: string) {
+    this._snackBar.open(
+      message, '', {
+        duration: 5000,
+        horizontalPosition: 'center',
+        verticalPosition: 'top'
+      }
+    );
   }
 }

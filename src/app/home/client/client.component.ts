@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ClientService} from "./client.service";
 import {Client} from "./client";
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-client',
@@ -8,7 +9,10 @@ import {Client} from "./client";
   styleUrls: ['./client.component.css']
 })
 export class ClientComponent implements OnInit {
-  constructor(private clientService: ClientService) { }
+  constructor(
+    private clientService: ClientService,
+    private _snackBar: MatSnackBar
+  ) { }
 
   client: Client | undefined
   displayedColumns: string[] = ['name', 'role', 'actions'];
@@ -19,6 +23,7 @@ export class ClientComponent implements OnInit {
     this.clientService.deleteClient(clientId).subscribe(client => {
       this.client = client
     })
+    this.openSnackBar('Cliente eliminado exitosamente')
     this.getClientsList()
   }
 
@@ -30,5 +35,15 @@ export class ClientComponent implements OnInit {
 
   ngOnInit(): void {
     this.getClientsList()
+  }
+
+  openSnackBar(message: string) {
+    this._snackBar.open(
+      message, '', {
+        duration: 5000,
+        horizontalPosition: 'center',
+        verticalPosition: 'top'
+      }
+    );
   }
 }

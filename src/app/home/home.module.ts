@@ -15,6 +15,7 @@ import {MatListModule} from "@angular/material/list";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatTableModule} from '@angular/material/table';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatListModule,
     MatSidenavModule,
     MatTableModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatSnackBarModule
   ]
 })
 export class HomeModule { }

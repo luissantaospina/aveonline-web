@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {RoleService} from "./role.service";
 import {Role} from "./role";
-import {User} from "../user/User";
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-role',
@@ -9,7 +9,10 @@ import {User} from "../user/User";
   styleUrls: ['./role.component.css']
 })
 export class RoleComponent implements OnInit {
-  constructor(private roleService: RoleService) { }
+  constructor(
+    private roleService: RoleService,
+    private _snackBar: MatSnackBar
+  ) { }
 
   displayedColumns: string[] = ['name', 'actions'];
 
@@ -21,6 +24,7 @@ export class RoleComponent implements OnInit {
     this.roleService.deleteRole(roleId).subscribe(role => {
       this.role = role
     })
+    this.openSnackBar('Rol eliminado exitosamente')
     this.getRolesList()
   }
 
@@ -32,5 +36,15 @@ export class RoleComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRolesList()
+  }
+
+  openSnackBar(message: string) {
+    this._snackBar.open(
+      message, '', {
+        duration: 5000,
+        horizontalPosition: 'center',
+        verticalPosition: 'top'
+      }
+    );
   }
 }
