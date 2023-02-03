@@ -2,33 +2,37 @@
   <div id="formContent">
     <h1 class="mt-2">Editar cliente</h1>
     <form [formGroup]="updateClientForm" (ngSubmit)="updateClient(updateClientForm.value)">
+      <p>Nombre</p>
       <input
-        type="text" class="fadeIn second mt-3"
-        formControlName="nombre" placeholder="nombre"
+        type="text" class="fadeIn second"
+        formControlName="nombre" placeholder="Jhon Doe"
       >
       <div class=" danger-alert"
            *ngIf=" updateClientForm.get('nombre')!.hasError('required') &&
              updateClientForm.get('nombre')!.touched"
       > Nombre requerido </div>
 
+      <p>Email</p>
       <input
-        type="text" class="fadeIn second mt-3"
-        formControlName="login" placeholder="email"
+        type="text" class="fadeIn second"
+        formControlName="login" placeholder="jhondoe@aveonline.co"
       >
       <div class=" danger-alert"
            *ngIf=" updateClientForm.get('login')!.hasError('required') &&
              updateClientForm.get('login')!.touched"
       > Email requerido </div>
 
+      <p>Clave</p>
       <input
-        type="text" class="fadeIn second mt-3"
-        formControlName="clave" placeholder="clave"
+        type="text" class="fadeIn second"
+        formControlName="clave" placeholder="miclavesecreta"
       >
       <div class=" danger-alert"
            *ngIf=" updateClientForm.get('clave')!.hasError('required') &&
              updateClientForm.get('clave')!.touched"
       > Clave requerida </div>
 
+      <p>Rol</p>
       <select
         [(ngModel)]="roleSelect"
         [ngModelOptions]="{standalone: true}"
@@ -42,7 +46,7 @@
       > Rol requerido </div>
 
       <input
-        type="submit" class="fadeIn fourth mt-3"
+        type="submit" class="fadeIn fourth mt-4"
         value="Editar" [disabled]="updateClientForm.invalid"
       >
     </form>

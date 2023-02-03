@@ -2,54 +2,60 @@
   <div id="formContent">
     <h1 class="mt-2">Crear producto</h1>
     <form [formGroup]="createProductForm" (ngSubmit)="createProduct(createProductForm.value)">
+      <p>Código</p>
       <input
-        type="text" class="fadeIn second mt-3"
-        formControlName="codigo" placeholder="código"
+        type="text" class="fadeIn second"
+        formControlName="codigo" placeholder="PRO1234"
       >
       <div class=" danger-alert"
         *ngIf=" createProductForm.get('codigo')!.hasError('required') &&
              createProductForm.get('codigo')!.touched"
       > Código requerido </div>
 
+      <p>Nombre</p>
       <input
-        type="text" class="fadeIn second mt-3"
-        formControlName="nombre" placeholder="nombre"
+        type="text" class="fadeIn second"
+        formControlName="nombre" placeholder="Colores"
       >
       <div class=" danger-alert"
            *ngIf=" createProductForm.get('nombre')!.hasError('required') &&
              createProductForm.get('nombre')!.touched"
       > Nombre requerido </div>
 
+      <p>Descripción</p>
       <input
         type="text" class="fadeIn third"
-        formControlName="descripcion" placeholder="descripcion"
+        formControlName="descripcion" placeholder="Colores de trazo fino"
       >
       <div class=" danger-alert"
            *ngIf=" createProductForm.get('descripcion')!.hasError('required') &&
              createProductForm.get('descripcion')!.touched"
       > Descripción requerida </div>
 
+      <p>Categoria total</p>
       <input
         type="text" class="fadeIn third"
-        formControlName="categoria" placeholder="categoria"
+        formControlName="categoria" placeholder="Utiles escolares"
       >
       <div class=" danger-alert"
            *ngIf=" createProductForm.get('categoria')!.hasError('required') &&
              createProductForm.get('categoria')!.touched"
       > Categoria requerida </div>
 
+      <p>Cantidad </p>
       <input
         type="number" class="fadeIn third"
-        formControlName="cantidad" placeholder="cantidad"
+        formControlName="cantidad" placeholder="25"
       >
       <div class=" danger-alert"
            *ngIf=" createProductForm.get('cantidad')!.hasError('required') &&
              createProductForm.get('cantidad')!.touched"
       > Cantidad requerida </div>
 
+      <p>Precio</p>
       <input
         type="number" class="fadeIn third"
-        formControlName="precio" placeholder="precio"
+        formControlName="precio" placeholder="25.000"
       >
       <div class=" danger-alert"
            *ngIf=" createProductForm.get('precio')!.hasError('required') &&
@@ -57,7 +63,7 @@
       > Precio requerida </div>
 
       <input
-        type="submit" class="fadeIn fourth mt-3"
+        type="submit" class="fadeIn fourth mt-4"
         value="Crear" [disabled]="createProductForm.invalid"
       >
     </form>
