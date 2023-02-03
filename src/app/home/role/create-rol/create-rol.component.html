@@ -2,9 +2,10 @@
   <div id="formContent">
     <h1 class="mt-2">Crear rol</h1>
     <form [formGroup]="createRoleForm" (ngSubmit)="createProduct(createRoleForm.value)">
+      <p>Nombre</p>
       <input
-        type="text" class="fadeIn second mt-3"
-        formControlName="nombre" placeholder="nombre"
+        type="text" class="fadeIn second"
+        formControlName="nombre" placeholder="Director de operaciones"
       >
       <div class=" danger-alert"
            *ngIf=" createRoleForm.get('nombre')!.hasError('required') &&
@@ -12,7 +13,7 @@
       > Nombre requerido </div>
 
       <input
-        type="submit" class="fadeIn fourth mt-3"
+        type="submit" class="fadeIn fourth mt-4"
         value="Crear" [disabled]="createRoleForm.invalid"
       >
     </form>

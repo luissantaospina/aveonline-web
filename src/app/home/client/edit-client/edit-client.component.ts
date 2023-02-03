@@ -17,37 +17,20 @@ export class EditClientComponent implements OnInit {
     private clientService: ClientService,
     private _snackBar: MatSnackBar,
     private formBuilder: FormBuilder,
-    private route:ActivatedRoute,
-    private roleService: RoleService
+    private route:ActivatedRoute
   ) { }
 
   updateClientForm!: FormGroup
   client: any
   clientSave: any
-  roles: Array<Role> = []
-  roleSelect: string = ''
 
   ngOnInit(): void {
-    this.getRolesList()
     this.client = this.route.snapshot.params
     this.getClient(this.client.id)
     this.updateClientForm = this.formBuilder.group({
       nombre: ["", Validators.required],
-      rol_id: ["", Validators.required],
       login: ["", Validators.required],
       clave: ["", Validators.required]
-    })
-  }
-
-  changeRole() {
-    this.updateClientForm.patchValue({
-      rol_id: this.roleSelect
-    });
-  }
-
-  getRolesList(): void {
-    this.roleService.getRoles().subscribe((roles: Role[]) => {
-      this.roles = roles
     })
   }
 
@@ -61,10 +44,8 @@ export class EditClientComponent implements OnInit {
   getClient(id: string): void {
     this.clientService.getClient(id).subscribe(client => {
       this.clientSave = client
-      this.roleSelect = this.clientSave.role.id
         this.updateClientForm = this.formBuilder.group({
         nombre: [this.clientSave.nombre, Validators.required],
-        rol_id: [this.clientSave.role.id, Validators.required],
         login: [this.clientSave.login, Validators.required],
         clave: ["", Validators.required]
       })

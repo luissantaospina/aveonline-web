@@ -2,26 +2,29 @@
   <div id="formContent">
     <h1 class="mt-2">Editar orden</h1>
     <form [formGroup]="updateOrderForm" (ngSubmit)="updateOrder(updateOrderForm.value)">
+      <p>Código</p>
       <input
-        type="text" class="fadeIn second mt-3"
-        formControlName="codigo" placeholder="código"
+        type="text" class="fadeIn second"
+        formControlName="codigo" placeholder="ORD1234"
       >
       <div class=" danger-alert"
            *ngIf=" updateOrderForm.get('codigo')!.hasError('required') &&
              updateOrderForm.get('codigo')!.touched"
       > Código requerido </div>
 
+      <p>Precio total</p>
       <input
-        type="number" class="fadeIn second mt-3"
-        formControlName="precio" placeholder="precio"
+        type="number" class="fadeIn second"
+        formControlName="precio" placeholder="100.220.000"
       >
       <div class=" danger-alert"
            *ngIf=" updateOrderForm.get('precio')!.hasError('required') &&
              updateOrderForm.get('precio')!.touched"
       > Precio requerido </div>
 
+      <p>Fecha de compra</p>
       <input
-        type="date" class="fadeIn second mt-3" min="{{date}}"
+        type="date" class="fadeIn second" min="{{date}}"
         formControlName="fecha_compra" placeholder="fecha de compra"
       >
       <div class=" danger-alert"
@@ -30,7 +33,7 @@
       > Fecha de compra requerido </div>
 
       <input
-        type="submit" class="fadeIn fourth mt-3"
+        type="submit" class="fadeIn fourth mt-5"
         value="Editar" [disabled]="updateOrderForm.invalid"
       >
     </form>

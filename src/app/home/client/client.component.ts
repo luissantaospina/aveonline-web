@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {ClientService} from "./client.service";
 import {Client} from "./client";
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-client',
@@ -15,7 +14,7 @@ export class ClientComponent implements OnInit {
     private _snackBar: MatSnackBar
   ) { }
 
-  displayedColumns: string[] = ['name', 'role', 'actions'];
+  displayedColumns: string[] = ['name', 'email', 'actions'];
 
   clients: Array<Client> = []
 
