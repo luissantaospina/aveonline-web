@@ -26,6 +26,9 @@ import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { EditProductComponent } from './product/edit-product/edit-product.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from '../interceptors/auth-interceptor.service';
+import { OrderComponent } from './order/order.component';
+import { CreateOrderComponent } from './order/create-order/create-order.component';
+import { EditOrderComponent } from './order/edit-order/edit-order.component';
 
 
 @NgModule({
@@ -43,7 +46,10 @@ import { AuthInterceptorService } from '../interceptors/auth-interceptor.service
     EditClientComponent,
     EditRoleComponent,
     EditUserComponent,
-    EditProductComponent
+    EditProductComponent,
+    OrderComponent,
+    CreateOrderComponent,
+    EditOrderComponent
   ],
   imports: [
       CommonModule,

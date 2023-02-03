@@ -1,21 +1,21 @@
 <div class="container">
   <mat-toolbar>
-    <span>Clientes</span>
+    <span>Ordenes</span>
     <div class="flex"></div>
-    <button mat-fab color="primary" routerLink="/inicio/clientes/crear">
+    <button mat-fab color="primary" routerLink="/inicio/ordenes/crear">
       <mat-icon>add</mat-icon>
     </button>
   </mat-toolbar>
 
-  <table mat-table [dataSource]="clients" class="mat-elevation-z2">
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Nombre </th>
-      <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+  <table mat-table [dataSource]="orders" class="mat-elevation-z2">
+    <ng-container matColumnDef="codigo">
+      <th mat-header-cell *matHeaderCellDef> Código </th>
+      <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="role">
-      <th mat-header-cell *matHeaderCellDef> Rol </th>
-      <td mat-cell *matCellDef="let element"> {{element.role.nombre}} </td>
+    <ng-container matColumnDef="precio">
+      <th mat-header-cell *matHeaderCellDef> Precio </th>
+      <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
     </ng-container>
 
     <ng-container matColumnDef="actions">
@@ -23,15 +23,15 @@
       <td mat-cell *matCellDef="let element" style="text-align: right">
         <a
           class="pointer pointer-edit"
-          matTooltip="Editar cliente"
-          routerLink="/inicio/clientes/editar/{{element.id}}"
+          matTooltip="Editar orden"
+          routerLink="/inicio/ordenes/editar/{{element.id}}"
         >
           <mat-icon>edit</mat-icon>
         </a>
         <a
           class="pointer delete"
-          matTooltip="Eliminar cliente"
-          (click)="deleteClient(element.id)"
+          matTooltip="Eliminar orden"
+          (click)="deleteOrder(element.id)"
         >
           <mat-icon>delete</mat-icon>
         </a>

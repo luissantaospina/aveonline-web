@@ -56,7 +56,7 @@ export class CreateUserComponent implements OnInit {
   openSnackBar(message: string) {
     this._snackBar.open(
       message, '', {
-        duration: 6000,
+        duration: 3000,
         horizontalPosition: 'center',
         verticalPosition: 'top'
       }

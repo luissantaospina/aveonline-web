@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
 
   checkLocalStorage() {
     if (localStorage.getItem('token')) {
-      this.router.navigate(['inicio/usuarios'])
+      this.router.navigate(['inicio/ordenes'])
     }
   }
 
@@ -36,7 +36,9 @@ export class LoginComponent implements OnInit {
     this.api.login(form).subscribe(
       (result: any) => {
         localStorage.setItem("token", result.access_token)
-        this.router.navigate(['inicio/usuarios'])
+        localStorage.setItem('permissions', JSON.stringify(result.permissions))
+        localStorage.setItem('user', JSON.stringify(result.user.id))
+        this.router.navigate(['inicio/ordenes'])
       },
       (error) => {
         this.openSnackBar('El email y/o contraseña es incorrecto')
