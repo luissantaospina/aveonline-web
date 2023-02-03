@@ -1,13 +1,16 @@
-export class Client {
-  nombre: string;
-  rol: string;
+export class Order {
+  cliente_id: string;
+  codigo: string;
+  precio: number;
 
   constructor(
-    nombre: string,
-    rol: string
+    cliente_id: string,
+    codigo: string,
+    precio: number,
   )
   {
-    this.nombre = nombre;
-    this.rol = rol;
+    this.cliente_id = cliente_id;
+    this.codigo = codigo;
+    this.precio = precio
   }
 }

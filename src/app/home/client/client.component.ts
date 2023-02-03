@@ -12,11 +12,9 @@ import {Router} from '@angular/router'
 export class ClientComponent implements OnInit {
   constructor(
     private clientService: ClientService,
-    private _snackBar: MatSnackBar,
-    private router:Router
+    private _snackBar: MatSnackBar
   ) { }
 
-  client: Client | undefined
   displayedColumns: string[] = ['name', 'role', 'actions'];
 
   clients: Array<Client> = []
@@ -41,7 +39,7 @@ export class ClientComponent implements OnInit {
   openSnackBar(message: string) {
     this._snackBar.open(
       message, '', {
-        duration: 5000,
+        duration: 4000,
         horizontalPosition: 'center',
         verticalPosition: 'top'
       }

@@ -39,7 +39,7 @@ export class UserComponent implements OnInit {
   openSnackBar(message: string) {
     this._snackBar.open(
       message, '', {
-        duration: 5000,
+        duration: 4000,
         horizontalPosition: 'center',
         verticalPosition: 'top'
       }

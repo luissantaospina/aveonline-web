@@ -14,6 +14,9 @@ import {EditRoleComponent} from "./role/edit-role/edit-role.component";
 import {EditUserComponent} from "./user/edit-user/edit-user.component";
 import {EditProductComponent} from "./product/edit-product/edit-product.component";
 import {DashboardGuard} from "../guards/dashboard.guard";
+import {OrderComponent} from "./order/order.component";
+import {CreateOrderComponent} from "./order/create-order/create-order.component";
+import {EditOrderComponent} from "./order/edit-order/edit-order.component";
 
 const routes: Routes = [
   {
@@ -24,6 +27,9 @@ const routes: Routes = [
       { path: 'roles', component: RoleComponent},
       { path: 'clientes', component: ClientComponent},
       { path: 'productos', component: ProductComponent},
+      { path: 'ordenes', component: OrderComponent},
+      { path: 'ordenes/crear', component: CreateOrderComponent},
+      { path: 'ordenes/editar/:id', component: EditOrderComponent},
       { path: 'productos/crear', component: CreateProductComponent},
       { path: 'productos/editar/:id', component: EditProductComponent},
       { path: 'usuarios/crear', component: CreateUserComponent},

@@ -8,7 +8,7 @@ Funcionalmente se puede crear, editar, eliminar y consultar usuarios, clientes, 
 
 ### Programas
 1. [x] Node https://nodejs.org/es/
-2. GIT
+2. [x] GIT https://git-scm.com/
 
 ### Versiones
 1. [x] Node v14.20.1npm
@@ -25,14 +25,15 @@ Funcionalmente se puede crear, editar, eliminar y consultar usuarios, clientes, 
 
 
 ## Inicio
-1. [ ] Iniciar aplicación `ng serve`
-2. [ ] Generalmente se despliega en http://localhost:4200/ (verificar puesto que esto puede cambiar)
-3. [ ] Para iniciar sesión se cuenta con 2 usuarios base:
+1. [x] Iniciar aplicación `ng serve`
+2. [x] Generalmente se despliega en http://localhost:4200/ (verificar puesto que esto puede cambiar)
+3. [x] Para iniciar sesión se cuenta con 2 usuarios base:
 
-| Nombre            | Email | Clave    | Rol |
--------------------|-------|----------|----|
-   | Jhon Doe          | administrador@aveonline.co | password | Administrador |
-   | Luis Doe          | usuario@aveonline.co | password | Usuario |
+| Nombre       | Email                      | Clave    | Rol           | Permisos            |
+--------------|----------------------------|----------|---------------|---------------------|
+   | Jhon Doe     | administrador@aveonline.co | AVEOnline77 | Administrador | Todos los permisos  |
+   | Luis Doe     | usuario@aveonline.co       | AVEOnline77 | Usuario       | Ordenes y productos |
+| Fernando Doe | cliente@aveonline.co       | AVEOnline77 | Cliente       | Ordenes             |
 
 ## Previos
 ![login.png](src%2Fassets%2Flogin.png)

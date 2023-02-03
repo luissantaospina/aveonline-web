@@ -45,7 +45,7 @@ export class CreateClientComponent implements OnInit {
     })
   }
 
-  createProduct(client: Client) {
+  createClient(client: Client) {
     this.clientService.createClient(client).subscribe(client => {
       this.createClientForm.reset()
       this.openSnackBar('Cliente creado exitosamente')
@@ -55,7 +55,7 @@ export class CreateClientComponent implements OnInit {
   openSnackBar(message: string) {
     this._snackBar.open(
       message, '', {
-        duration: 6000,
+        duration: 3000,
         horizontalPosition: 'center',
         verticalPosition: 'top'
       }
