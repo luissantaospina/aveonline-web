@@ -21,6 +21,15 @@
       > Precio requerido </div>
 
       <input
+        type="date" class="fadeIn second mt-3" min="{{date}}"
+        formControlName="fecha_compra" placeholder="fecha de compra"
+      >
+      <div class=" danger-alert"
+           *ngIf=" updateOrderForm.get('fecha_compra')!.hasError('required') &&
+             updateOrderForm.get('fecha_compra')!.touched"
+      > Fecha de compra requerido </div>
+
+      <input
         type="submit" class="fadeIn fourth mt-3"
         value="Editar" [disabled]="updateOrderForm.invalid"
       >

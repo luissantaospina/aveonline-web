@@ -14,7 +14,7 @@ export class OrderComponent implements OnInit {
     private _snackBar: MatSnackBar
   ) { }
 
-  displayedColumns: string[] = ['codigo', 'precio', 'actions'];
+  displayedColumns: string[] = ['codigo', 'precio', 'fecha_compra', 'actions'];
 
   orders: Array<Order> = []
 

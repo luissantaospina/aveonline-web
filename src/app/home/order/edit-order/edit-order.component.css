@@ -52,7 +52,7 @@ input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
   background-color: #871537;
 }
 
-input[type=text], input[type=number], input[type=password] {
+input[type=text], input[type=number], input[type=password], input[type=date], select {
   background-color: #eae9e9;
   padding: 15px 32px;
   text-align: center;
@@ -67,6 +67,11 @@ input[type=text], input[type=number], input[type=password] {
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+}
+
+.option-color {
+  color: black;
+  background: white;
 }
 
 input[type=text]:focus {
