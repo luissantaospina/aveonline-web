@@ -32,19 +32,6 @@
              createClientForm.get('clave')!.touched"
       > Clave requerida </div>
 
-      <p>Rol</p>
-      <select
-        [(ngModel)]="roleSelect"
-        [ngModelOptions]="{standalone: true}"
-        (change)="changeRole()"
-      >
-        <option [value]="role.id" *ngFor="let role of roles">{{role.nombre}}</option>
-      </select>
-      <div class=" danger-alert"
-           *ngIf=" createClientForm.get('rol_id')!.hasError('required') &&
-             createClientForm.get('rol_id')!.touched"
-      > Rol requerido </div>
-
       <input
         type="submit" class="fadeIn fourth mt-4"
         value="Crear" [disabled]="createClientForm.invalid"

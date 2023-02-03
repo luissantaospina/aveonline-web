@@ -20,28 +20,12 @@ export class CreateClientComponent implements OnInit {
   ) { }
 
   createClientForm!: FormGroup
-  roles: Array<Role> = []
-  roleSelect: string = ''
 
   ngOnInit(): void {
-    this.getRolesList()
     this.createClientForm = this.formBuilder.group({
       nombre: ["", Validators.required],
-      rol_id: ["", Validators.required],
       login: ["", Validators.required],
       clave: ["", Validators.required]
-    })
-  }
-
-  changeRole() {
-    this.createClientForm.patchValue({
-      rol_id: this.roleSelect
-    });
-  }
-
-  getRolesList(): void {
-    this.roleService.getRoles().subscribe((roles: Role[]) => {
-      this.roles = roles
     })
   }
 

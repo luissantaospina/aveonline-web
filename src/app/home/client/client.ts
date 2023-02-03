@@ -1,13 +1,13 @@
 export class Client {
   nombre: string;
-  rol: string;
+  login: string;
 
   constructor(
     nombre: string,
-    rol: string
+    login: string
   )
   {
     this.nombre = nombre;
-    this.rol = rol;
+    this.login = login;
   }
 }
