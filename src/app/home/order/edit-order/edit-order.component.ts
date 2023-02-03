@@ -4,6 +4,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute} from "@angular/router";
 import {Order} from "../order";
 import {OrderService} from "../order.service";
+import {formatDate} from "@angular/common";
 
 @Component({
   selector: 'app-edit-order',
@@ -21,14 +22,17 @@ export class EditOrderComponent implements OnInit {
   order: any
   orderSave: any
   updateOrderForm!: FormGroup
+  date: string | undefined
 
   ngOnInit(): void {
+    this.date = formatDate(new Date(), 'yyyy-MM-dd', 'en-US')
     this.order = this.route.snapshot.params
     this.getOrder(this.order.id)
     this.updateOrderForm = this.formBuilder.group({
       codigo: ["", Validators.required],
       precio: ["", Validators.required],
-      cliente_id: ["", Validators.required]
+      cliente_id: ["", Validators.required],
+      fecha_compra: ["", Validators.required]
     })
   }
 
@@ -39,6 +43,7 @@ export class EditOrderComponent implements OnInit {
         codigo: [this.orderSave.codigo, Validators.required],
         precio: [this.orderSave.precio, Validators.required],
         cliente_id: [this.orderSave.cliente_id, Validators.required],
+        fecha_compra: [this.orderSave.fecha_compra, Validators.required]
       })
     })
   }

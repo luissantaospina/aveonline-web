@@ -3,6 +3,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {OrderService} from "../order.service";
 import {Order} from "../order";
+import {formatDate} from "@angular/common";
 
 @Component({
   selector: 'app-create-order',
@@ -18,13 +19,16 @@ export class CreateOrderComponent implements OnInit {
 
   createOrderForm!: FormGroup
   user: string | null | undefined
+  date: string | undefined
 
   ngOnInit(): void {
+    this.date = formatDate(new Date(), 'yyyy-MM-dd', 'en-US')
     this.user = localStorage.getItem('user')
     this.createOrderForm = this.formBuilder.group({
       codigo: ["", Validators.required],
       precio: ["", Validators.required],
       cliente_id: [this.user, Validators.required],
+      fecha_compra: ["", Validators.required]
     })
   }
 
