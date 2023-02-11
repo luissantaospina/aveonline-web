@@ -3,7 +3,7 @@ import {ProductsService} from "../products.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Product} from "../Product";
-import {ActivatedRoute} from '@angular/router'
+import {Router, ActivatedRoute} from '@angular/router'
 
 @Component({
   selector: 'app-edit-product',
@@ -15,7 +15,8 @@ export class EditProductComponent implements OnInit {
     private productService: ProductsService,
     private _snackBar: MatSnackBar,
     private formBuilder: FormBuilder,
-    private route:ActivatedRoute
+    private route:ActivatedRoute,
+    private router:Router
   ) { }
 
   product: any
@@ -42,9 +43,9 @@ export class EditProductComponent implements OnInit {
         nombre: [this.productSave.nombre, Validators.required],
         cantidad: [this.productSave.cantidad, Validators.required],
         categoria: [this.productSave.categoria, Validators.required],
-        codigo: [this.productSave.cantidad, Validators.required],
+        codigo: [this.productSave.codigo, Validators.required],
         descripcion: [this.productSave.descripcion, Validators.required],
-        precio: [this.productSave.precio, Validators.required],
+        precio: [this.productSave.precio, Validators.required]
       })
     })
   }
@@ -53,6 +54,7 @@ export class EditProductComponent implements OnInit {
     this.productService.updateProduct(this.product.id, product).subscribe(() => {
       this.updateProductForm.reset()
       this.openSnackBar('Producto editado exitosamente')
+      this.router.navigate(['inicio/productos'])
     })
   }
 

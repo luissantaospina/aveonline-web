@@ -15,21 +15,21 @@
       <p>Email</p>
       <input
         type="text" class="fadeIn second"
-        formControlName="login" placeholder="jhondoe@aveonline.co"
+        formControlName="email" placeholder="jhondoe@aveonline.co"
       >
       <div class=" danger-alert"
-           *ngIf=" updateUserForm.get('login')!.hasError('required') &&
-             updateUserForm.get('login')!.touched"
+           *ngIf=" updateUserForm.get('email')!.hasError('required') &&
+             updateUserForm.get('email')!.touched"
       > Email requerido </div>
 
       <p>Clave</p>
       <input
         type="text" class="fadeIn second"
-        formControlName="clave" placeholder="miclavesecreta"
+        formControlName="password" placeholder="miclavesecreta"
       >
       <div class=" danger-alert"
-           *ngIf=" updateUserForm.get('clave')!.hasError('required') &&
-             updateUserForm.get('clave')!.touched"
+           *ngIf=" updateUserForm.get('password')!.hasError('required') &&
+             updateUserForm.get('password')!.touched"
       > Clave requerida </div>
 
       <p>Rol</p>

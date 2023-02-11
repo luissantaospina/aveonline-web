@@ -29,8 +29,8 @@ export class CreateUserComponent implements OnInit {
     this.createUserForm = this.formBuilder.group({
       nombre: ["", Validators.required],
       rol_id: ["", Validators.required],
-      login: ["", Validators.required],
-      clave: ["", Validators.required]
+      email: ["", Validators.required],
+      password: ["", Validators.required]
     })
   }
 

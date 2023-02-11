@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {ActivatedRoute} from "@angular/router";
+import {Router, ActivatedRoute} from "@angular/router";
 import {Order} from "../order";
 import {OrderService} from "../order.service";
 import {formatDate} from "@angular/common";
@@ -16,7 +16,8 @@ export class EditOrderComponent implements OnInit {
     private orderService: OrderService,
     private _snackBar: MatSnackBar,
     private formBuilder: FormBuilder,
-    private route:ActivatedRoute
+    private route:ActivatedRoute,
+    private router:Router
   ) { }
 
   order: any
@@ -52,6 +53,7 @@ export class EditOrderComponent implements OnInit {
     this.orderService.updateOrder(this.order.id, order).subscribe(order => {
       this.updateOrderForm.reset()
       this.openSnackBar('Orden editada exitosamente')
+      this.router.navigate(['inicio/ordenes'])
     })
   }
 

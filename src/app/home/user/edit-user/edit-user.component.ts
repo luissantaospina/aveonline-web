@@ -3,7 +3,7 @@ import {UserService} from "../user.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {User} from "../User";
-import {ActivatedRoute} from '@angular/router'
+import {ActivatedRoute, Router} from '@angular/router'
 import {Role} from "../../role/role";
 import {RoleService} from "../../role/role.service";
 
@@ -18,7 +18,8 @@ export class EditUserComponent implements OnInit {
     private _snackBar: MatSnackBar,
     private formBuilder: FormBuilder,
     private route:ActivatedRoute,
-    private roleService: RoleService
+    private roleService: RoleService,
+    private router:Router
   ) { }
 
   user: any
@@ -34,8 +35,8 @@ export class EditUserComponent implements OnInit {
     this.updateUserForm = this.formBuilder.group({
       nombre: ["", Validators.required],
       rol_id: ["", Validators.required],
-      login: ["", Validators.required],
-      clave: ["", Validators.required]
+      email: ["", Validators.required],
+      password: ["", Validators.required]
     })
   }
 
@@ -58,8 +59,8 @@ export class EditUserComponent implements OnInit {
       this.updateUserForm = this.formBuilder.group({
         nombre: [this.userSave.nombre, Validators.required],
         rol_id: [this.userSave.role.id, Validators.required],
-        login: [this.userSave.login, Validators.required],
-        clave: ["", Validators.required]
+        email: [this.userSave.email, Validators.required],
+        password: ["", Validators.required]
       })
     })
   }
@@ -68,6 +69,7 @@ export class EditUserComponent implements OnInit {
     this.userService.updateUser(this.user.id, user).subscribe(() => {
       this.updateUserForm.reset()
       this.openSnackBar('Usuario editado exitosamente')
+      this.router.navigate(['inicio/usuarios'])
     })
   }
 

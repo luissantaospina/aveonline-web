@@ -3,7 +3,7 @@ import {RoleService} from "../role.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Role} from "../role";
-import {ActivatedRoute} from '@angular/router'
+import {ActivatedRoute, Router} from '@angular/router'
 
 @Component({
   selector: 'app-edit-role',
@@ -15,7 +15,8 @@ export class EditRoleComponent implements OnInit {
     private roleService: RoleService,
     private _snackBar: MatSnackBar,
     private formBuilder: FormBuilder,
-    private route:ActivatedRoute
+    private route:ActivatedRoute,
+    private router:Router
   ) { }
 
   role: any
@@ -43,6 +44,7 @@ export class EditRoleComponent implements OnInit {
     this.roleService.updateRole(this.role.id, role).subscribe(() => {
       this.updateRoleForm.reset()
       this.openSnackBar('Rol editado exitosamente')
+      this.router.navigate(['inicio/roles'])
     })
   }
 

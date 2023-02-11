@@ -3,7 +3,7 @@ import {ClientService} from "../client.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Client} from "../client";
-import {ActivatedRoute} from '@angular/router'
+import {Router, ActivatedRoute} from '@angular/router'
 
 @Component({
   selector: 'app-edit-client',
@@ -15,7 +15,8 @@ export class EditClientComponent implements OnInit {
     private clientService: ClientService,
     private _snackBar: MatSnackBar,
     private formBuilder: FormBuilder,
-    private route:ActivatedRoute
+    private route:ActivatedRoute,
+    private router:Router,
   ) { }
 
   updateClientForm!: FormGroup
@@ -36,6 +37,7 @@ export class EditClientComponent implements OnInit {
     this.clientService.updateClient(this.client.id, client).subscribe(client => {
       this.updateClientForm.reset()
       this.openSnackBar('Cliente editado exitosamente')
+      this.router.navigate(['inicio/clientes'])
     })
   }
 
