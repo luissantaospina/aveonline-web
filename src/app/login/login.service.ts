@@ -16,4 +16,8 @@ export class LoginService {
   login(form:LoginInterfase): Observable<ResponseInterfase> {
     return this.http.post<ResponseInterfase>(this.apiUrl + 'login', form)
   }
+
+  logout(): Observable<any> {
+    return this.http.post<any>(this.apiUrl + 'logout', '')
+  }
 }

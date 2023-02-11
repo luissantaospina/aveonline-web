@@ -31,7 +31,7 @@ export class CreateProductComponent implements OnInit {
   }
 
   createProduct(product: Product) {
-    this.productService.createProduct(product).subscribe(product => {
+    this.productService.createProduct(product).subscribe(() => {
       this.createProductForm.reset()
       this.openSnackBar('Producto creado exitosamente')
     })

@@ -24,7 +24,7 @@ import { EditClientComponent } from './client/edit-client/edit-client.component'
 import { EditRoleComponent } from './role/edit-role/edit-role.component';
 import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { EditProductComponent } from './product/edit-product/edit-product.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from '../interceptors/auth-interceptor.service';
 import { OrderComponent } from './order/order.component';
 import { CreateOrderComponent } from './order/create-order/create-order.component';

@@ -7,7 +7,16 @@
         alt="logo-aveonline"
       >
       <input type="text" id="email" class="fadeIn second mt-3" formControlName="email" placeholder="email">
+      <div class=" danger-alert"
+           *ngIf=" loginForm.get('email')!.hasError('required') &&
+             loginForm.get('email')!.touched"
+      > Email requerido </div>
+
       <input type="password" id="password" class="fadeIn third" formControlName="password" placeholder="clave">
+      <div class=" danger-alert"
+           *ngIf=" loginForm.get('password')!.hasError('required') &&
+             loginForm.get('password')!.touched"
+      > Clave requerida </div>
       <input type="submit" class="fadeIn fourth mt-3" value="Iniciar sesion" [disabled]="loginForm.invalid">
     </form>
   </div>

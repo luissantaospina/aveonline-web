@@ -40,7 +40,7 @@ export class EditRoleComponent implements OnInit {
   }
 
   updateProduct(role: Role) {
-    this.roleService.updateRole(this.role.id, role).subscribe(role => {
+    this.roleService.updateRole(this.role.id, role).subscribe(() => {
       this.updateRoleForm.reset()
       this.openSnackBar('Rol editado exitosamente')
     })

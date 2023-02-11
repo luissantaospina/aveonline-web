@@ -50,7 +50,7 @@ export class EditProductComponent implements OnInit {
   }
 
   updateProduct(product: Product) {
-    this.productService.updateProduct(this.product.id, product).subscribe(product => {
+    this.productService.updateProduct(this.product.id, product).subscribe(() => {
       this.updateProductForm.reset()
       this.openSnackBar('Producto editado exitosamente')
     })

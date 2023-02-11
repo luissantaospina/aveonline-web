@@ -3,8 +3,6 @@ import {ClientService} from "../client.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Client} from "../client";
-import {RoleService} from "../../role/role.service";
-import {Role} from "../../role/role";
 
 @Component({
   selector: 'app-create-client',
@@ -15,8 +13,7 @@ export class CreateClientComponent implements OnInit {
   constructor(
     private clientService: ClientService,
     private _snackBar: MatSnackBar,
-    private formBuilder: FormBuilder,
-    private roleService: RoleService
+    private formBuilder: FormBuilder
   ) { }
 
   createClientForm!: FormGroup

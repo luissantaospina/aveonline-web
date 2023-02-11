@@ -5,5 +5,3 @@ export const PERMISSIONS_CONSTANTS = {
   VER_ORDENES_COMPRA: 'Ver sus órdenes de compra',
   ADMINISTRAR_SISTEMA: 'Administrar sistema',
 };
-
-export default PERMISSIONS_CONSTANTS;

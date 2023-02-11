@@ -47,7 +47,7 @@ export class CreateUserComponent implements OnInit {
   }
 
   createProduct(user: User) {
-    this.userService.createUser(user).subscribe(product => {
+    this.userService.createUser(user).subscribe(() => {
       this.createUserForm.reset()
       this.openSnackBar('Usuario creado exitosamente')
     })

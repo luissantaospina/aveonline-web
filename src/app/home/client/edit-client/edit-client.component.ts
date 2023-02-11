@@ -4,8 +4,6 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Client} from "../client";
 import {ActivatedRoute} from '@angular/router'
-import {Role} from "../../role/role";
-import {RoleService} from "../../role/role.service";
 
 @Component({
   selector: 'app-edit-client',

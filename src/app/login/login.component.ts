@@ -33,18 +33,22 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(form: any) {
-    this.api.login(form).subscribe(
-      (result: any) => {
-        localStorage.setItem("token", result.access_token)
-        localStorage.setItem('permissions', JSON.stringify(result.permissions))
-        localStorage.setItem('user', JSON.stringify(result.user.id))
-        this.router.navigate(['inicio/ordenes'])
-      },
-      (error) => {
-        this.openSnackBar('El email y/o contraseña es incorrecto')
-        this.loginForm.reset()
-      }
-    )
+    this.api.login(form).subscribe({
+      next: this.loginSuccess.bind(this),
+      error: this.loginError.bind(this)
+    });
+  }
+
+  loginSuccess(loginResponse: any) {
+    localStorage.setItem("token", loginResponse.access_token)
+    localStorage.setItem('permissions', JSON.stringify(loginResponse.permissions))
+    localStorage.setItem('user', JSON.stringify(loginResponse.user.id))
+    this.router.navigate(['inicio/ordenes'])
+  }
+
+  loginError(loginError: any) {
+    this.openSnackBar('El email y/o contraseña es incorrecto')
+    this.loginForm.reset()
   }
 
   openSnackBar(message: string) {

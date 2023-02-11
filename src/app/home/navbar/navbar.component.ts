@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
 import { PERMISSIONS_CONSTANTS } from '../../consts/PermissionsConstants'
+import {LoginService} from "../../login/login.service";
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,10 @@ import { PERMISSIONS_CONSTANTS } from '../../consts/PermissionsConstants'
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(
+    private router:Router,
+    private loginService:LoginService
+  ) { }
 
   permissions = PERMISSIONS_CONSTANTS
   // @ts-ignore
@@ -23,6 +27,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logout(){
+    this.loginService.logout().subscribe()
     localStorage.removeItem("token")
     this.router.navigate(['login'])
   }

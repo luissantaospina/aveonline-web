@@ -65,7 +65,7 @@ export class EditUserComponent implements OnInit {
   }
 
   updateProduct(user: User) {
-    this.userService.updateUser(this.user.id, user).subscribe(product => {
+    this.userService.updateUser(this.user.id, user).subscribe(() => {
       this.updateUserForm.reset()
       this.openSnackBar('Usuario editado exitosamente')
     })

@@ -25,7 +25,7 @@ export class CreateRolComponent implements OnInit {
   }
 
   createProduct(role: Role) {
-    this.roleService.createRole(role).subscribe(role => {
+    this.roleService.createRole(role).subscribe(() => {
       this.createRoleForm.reset()
       this.openSnackBar('Rol creado exitosamente')
     })

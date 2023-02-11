@@ -33,7 +33,7 @@ export class CreateOrderComponent implements OnInit {
   }
 
   createOrder(order: Order) {
-    this.orderService.createOrder(order).subscribe(order => {
+    this.orderService.createOrder(order).subscribe(() => {
       this.createOrderForm.reset()
       this.openSnackBar('Orden creada exitosamente')
     })

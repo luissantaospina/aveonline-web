@@ -186,3 +186,15 @@ input[type=password]:focus {
 .aveonline{
   max-width: 220px;
 }
+
+.danger-alert {
+  background-color: #f0c1c1;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  width: 85%;
+  border: 2px solid #f6f6f6;
+  margin-top: -10px;
+}

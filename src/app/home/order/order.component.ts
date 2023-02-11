@@ -19,7 +19,7 @@ export class OrderComponent implements OnInit {
   orders: Array<Order> = []
 
   deleteOrder(orderId: string): void {
-    this.orderService.deleteOrder(orderId).subscribe(order => {
+    this.orderService.deleteOrder(orderId).subscribe(() => {
       this.openSnackBar('Orden eliminada exitosamente')
       this.getOrdersList()
     })

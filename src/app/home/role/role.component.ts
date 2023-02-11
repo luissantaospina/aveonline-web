@@ -21,7 +21,7 @@ export class RoleComponent implements OnInit {
   roles: Array<Role> = []
 
   deleteRole(roleId: string): void {
-    this.roleService.deleteRole(roleId).subscribe(role => {
+    this.roleService.deleteRole(roleId).subscribe(() => {
       this.openSnackBar('Rol eliminado exitosamente')
       this.getRolesList()
     })

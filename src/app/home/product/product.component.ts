@@ -25,7 +25,7 @@ export class ProductComponent implements OnInit {
   }
 
   deleteProduct(productId: string): void {
-    this.productService.deleteProduct(productId).subscribe(product => {
+    this.productService.deleteProduct(productId).subscribe(() => {
       this.openSnackBar('Producto eliminado exitosamente')
       this.getProductsList()
     })
