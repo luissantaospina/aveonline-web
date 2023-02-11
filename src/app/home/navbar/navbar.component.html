@@ -1,13 +1,13 @@
 <mat-toolbar color="primary">
-  <span>Aveonline</span>
-  <span class="example-spacer"></span>
+  <span><a routerLink="/inicio/ordenes">Aveonline</a></span>
+  <span class="spacer"></span>
   <button mat-button routerLink="/inicio/usuarios" *ngIf="administration">Usuarios</button>
   <button mat-button routerLink="/inicio/roles" *ngIf="administration">Roles</button>
   <button mat-button routerLink="/inicio/clientes" *ngIf="administration">Clientes</button>
   <button mat-button routerLink="/inicio/productos" *ngIf="loadProducts">Productos</button>
   <button mat-button routerLink="/inicio/ordenes" *ngIf="reviewPurchaseOrder || viewPurchaseOrders">Ordenes</button>
-  <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon" (click)="logout()">
+  <span class="spacer"></span>
+  <button mat-icon-button class="example-icon" (click)="logout()" matTooltip="Cerrar sesión">
     <mat-icon>logout</mat-icon>
   </button>
 </mat-toolbar>
